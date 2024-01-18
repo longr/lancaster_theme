@@ -37,33 +37,99 @@
     block=transparent,
   }
 }
+
+% Define colours
+%Primary
+\definecolor{lancasterGrey}{RGB}{190,192,194}
+\definecolor{lancasterBodyGrey}{RGB}{85,86,86}
+\definecolor{lancasterRed}{RGB}{181,18,27}
+\definecolor{lancasterBlack}{RGB}{35,31,32}
+\definecolor{lancasterLightGrey}{RGB}{233,236,237}
+
+%Secondary
+\definecolor{lancasterDarkGreen}{RGB}{85,120,105}
+\definecolor{lancasterLightGreen}{RGB}{134,153,120}
+\definecolor{lancasterBeige}{RGB}{186,182,162}
+\definecolor{lancasterDarkGrey}{RGB}{50,65,71}
+\definecolor{lancasterLightBlue}{RGB}{127,170,190}
+\definecolor{lancasterLightPurple}{RGB}{100,96,108}
+\definecolor{lancasterLightRed}{RGB}{194,103,99}
+\definecolor{lancasterLightYellow}{RGB}{227,203,139}
+\definecolor{lancasterLightOrange}{RGB}{225,171,108}
+
+
 \definecolor{mDarkBrown}{HTML}{604c38}
 \definecolor{mDarkTeal}{HTML}{23373b}
 \definecolor{mLightBrown}{HTML}{EB811B}
 \definecolor{mLightGreen}{HTML}{14B03D}
 \newcommand{\lancaster@colors@dark}{
   \setbeamercolor{normal text}{%
-    fg=black!2,
+    fg=black,
     bg=mDarkTeal
   }
   \usebeamercolor[fg]{normal text}
 }
 \newcommand{\lancaster@colors@light}{
   \setbeamercolor{normal text}{%
-    fg=mDarkTeal,
-    bg=black!2
+    fg=black,
+    bg=%black!20
   }
 }
 \setbeamercolor{alerted text}{%
-  fg=mLightBrown
+  fg=lancasterLightRed
 }
 \setbeamercolor{example text}{%
-  fg=mLightGreen
+  fg=lancasterDarkGreen
 }
-\setbeamercolor{titlelike}{use=normal text, parent=normal text}
-\setbeamercolor{author}{use=normal text, parent=normal text}
-\setbeamercolor{date}{use=normal text, parent=normal text}
-\setbeamercolor{institute}{use=normal text, parent=normal text}
+\setbeamercolor{titlelike}{use=normal text, parent=normal text, fg=lancasterRed}
+
+
+\newcommand{\lancaster@colors@white}{
+  \setbeamercolor{title}{%
+    use=normal text,
+    parent=normal text, 
+    fg=lancasterRed,
+    bg=,
+  }
+  \setbeamercolor{titlebackground}{%
+    bg=white,
+  }
+}
+\newcommand{\lancaster@colors@red}{
+  \setbeamercolor{title}{%
+    use=normal text,
+    parent=normal text,
+    fg=white,
+    bg=,
+  }
+  \setbeamercolor{author}{%
+    fg=white,
+    bg=,
+  }
+  \setbeamercolor{titlebackground}{%
+    bg=lancasterRed,
+  }
+}
+\newcommand{\lancaster@colors@blue}{
+  \setbeamercolor{title}{%
+    use=normal text,
+    parent=normal text,
+    fg=white,
+    bg=,
+  }
+  \setbeamercolor{author}{%
+    use=normal text,
+    parent=normal text,
+    fg=white,
+    bg=,
+  }
+  \setbeamercolor{titlebackground}{%
+    bg=lancasterLightBlue,
+  }
+}
+\setbeamercolor{subtitle}{use=title}
+\setbeamercolor{date}{use=author, parent=author}
+\setbeamercolor{institute}{use=author, parent=author}
 \setbeamercolor{structure}{use=normal text, fg=normal text.fg}
 \setbeamercolor{palette primary}{%
   use=normal text,
@@ -72,7 +138,15 @@
 }
 \setbeamercolor{frametitle}{%
   use=palette primary,
-  parent=palette primary
+  parent=palette primary,
+  fg=lancasterRed,
+  bg=%lancasterGrey!15 %for debugging
+}
+\setbeamercolor{framesubtitle}{%
+  use=palette primary,
+  parent=palette primary,
+  fg=lancasterRed,
+  bg=%lancasterGrey!15 %for debugging
 }
 \setbeamercolor{progress bar}{%
   use=alerted text,
@@ -87,6 +161,11 @@
   use=progress bar,
   parent=progress bar
 }
+
+\setbeamercolor{frame numbering}{%
+  fg=lancasterGrey
+}
+
 \setbeamercolor{progress bar in section page}{
   use=progress bar,
   parent=progress bar

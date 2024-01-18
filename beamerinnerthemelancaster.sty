@@ -41,6 +41,25 @@
     progressbar/.code={\lancaster@enablesubsectionpage
                        \setbeamertemplate{section page}[progressbar]},
 }
+
+\newcommand{\lancaster@inner@logodept}{
+  \def\logoindent{10.35}
+  \def\insertLUlogo{img/dept-logo.png}
+}
+
+\newcommand{\lancaster@inner@logouni}{
+  \def\logoindent{6.35}
+  \def\insertLUlogo{img/lu-logo.png}
+}
+
+
+\newcommand{\lancaster@inner@whitelogo}{
+%  \def\insertLUlogo{img/logoWhite}
+}
+\newcommand{\lancaster@inner@standardlogo}{
+  %  \def\insertLUlogo{img/logoNormal}
+}
+
 \newcommand{\lancaster@inner@setdefaults}{
   \pgfkeys{/lancaster/inner/.cd,
     sectionpage=progressbar,
@@ -61,6 +80,75 @@
     \vspace*{1mm}
   \end{minipage}
 }
+\setbeamerfont{normal text}{size=\LARGE}
+
+% TODO Convert all units to cm.
+% An em is a typographic unit, the width of a lowercase letter "m". By definition, it is equivalent to the height of the font (for example, in 16 point type en is 16 points). The em dash (—) and em space ( ) are each one em wide.
+
+
+\setbeamertemplate{title page}{
+  \usebeamercolor{titlebackground}
+  \nointerlineskip%
+  \begin{tikzpicture}[remember picture, overlay, shift=(current page.south west)]
+    \fill [fill=bg] (0.265cm,0.265cm) rectangle (\paperwidth-0.265cm,\paperheight-0.265cm);
+    \node[inner sep=0pt] (logo) at (\paperwidth-\logoindent em, \paperheight-3.7em)
+         {\includegraphics[height=2.7em]{\insertLUlogo}};
+  \end{tikzpicture}    
+
+  \vspace{0.0\paperheight}
+  \begin{beamercolorbox}[%
+      wd=0.8\paperwidth,%
+      sep=0pt,%
+      leftskip=\lancaster@frametitle@padding,%
+      rightskip=\lancaster@frametitle@padding,%
+      %ht=3.5em
+      ht=0.567\paperheight
+      %ht = 4.5em
+    ]{title page}%
+    %\lancaster@frametitlestrut@start%
+    %\vspace{2em}
+    % Using vbox as suggested to ensure that single or double line of text
+    % is centred at same point (vertically aligned)
+    % suggest at
+    % https://tex.stackexchange.com/questions/56300/how-can-i-vertically-align-a-beamercolorbox
+    %
+%    \vbox to 4em{\vfill
+      \raggedright
+      \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+      \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
+      \vspace{1.2em}
+%      \vfill}
+  \end{beamercolorbox}%
+    \vspace{-2em}
+  \noindent\textcolor{lancasterGrey}{\rule{6.5em}{0.08em}}
+%  \setbeamercolor{title page}{bg=lancasterRed!10} % for debugging
+  \begin{beamercolorbox}[%
+      wd=0.8\paperwidth,%
+      sep=0pt,%
+      leftskip=\lancaster@frametitle@padding,%
+      rightskip=\lancaster@frametitle@padding,%
+      ht=0.415\paperheight,
+    ]{title page}%
+    %\lancaster@frametitlestrut@start%
+    %\vspace{2em}
+    % Using vbox as suggested to ensure that single or double line of text
+    % is centred at same point (vertically aligned)
+    % suggest at
+    % https://tex.stackexchange.com/questions/56300/how-can-i-vertically-align-a-beamercolorbox
+    %
+    \vbox to 0.415\paperheight{%\vfill
+      \vspace{1.1em}     
+      \raggedright
+    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \vfill
+}
+%    \vspace{0.13\paperheight}
+  \end{beamercolorbox}%
+}
+
+
 \def\maketitle{%
   \ifbeamer@inframe
     \titlepage
@@ -74,7 +162,7 @@
 \setbeamertemplate{title graphic}{
   \vbox to 0pt {
     \vspace*{2em}
-    \inserttitlegraphic%
+    \inserttitlegraphic \\ %
   }%
   \nointerlineskip%
 }
@@ -82,7 +170,8 @@
   \raggedright%
   \linespread{1.0}%
   \inserttitle%
-  \par%
+  \par
+  \nointerlineskip%
   \vspace*{0.5em}
 }
 \setbeamertemplate{subtitle}{
@@ -102,17 +191,17 @@
   \par%
 }
 \setbeamertemplate{author}{
-  \vspace*{2em}
+  \vspace*{0.25em}
   \insertauthor%
   \par%
-  \vspace*{0.25em}
+%  \vspace*{0.25em}
 }
 \setbeamertemplate{date}{
   \insertdate%
   \par%
 }
 \setbeamertemplate{institute}{
-  \vspace*{3mm}
+  \vspace*{0.25em}
   \insertinstitute%
   \par%
 }
@@ -129,22 +218,57 @@
   \end{center}
 }
 \defbeamertemplate{section page}{progressbar}{
-  \centering
-  \begin{minipage}{22em}
+    \nointerlineskip%
+  \vspace{0.05\paperheight}
+%  \setbeamercolor{title page}{bg=lancasterGrey!20} %for debuigging
+  \begin{beamercolorbox}[%
+      wd=0.8\paperwidth,%
+      sep=0pt,%
+      leftskip=\lancaster@frametitle@padding,%
+      rightskip=\lancaster@frametitle@padding,%
+      %ht=3.5em
+      ht=0.54\paperheight
+      %ht = 4.5em
+    ]{title page}%
+    %\lancaster@frametitlestrut@start%
+    %\vspace{2em}
+    % Using vbox as suggested to ensure that single or double line of text
+    % is centred at same point (vertically aligned)
+    % suggest at
+    % https://tex.stackexchange.com/questions/56300/how-can-i-vertically-align-a-beamercolorbox
+    %
+%    \vbox to 4em{\vfill
     \raggedright
-    \usebeamercolor[fg]{section title}
-    \usebeamerfont{section title}
-    \insertsectionhead\\[-1ex]
-    \usebeamertemplate*{progress bar in section page}
+  \raggedright%
+  \linespread{1.0}%
+  \usebeamerfont{title}\color{lancasterRed}\insertsectionhead
     \par
-    \ifx\insertsubsectionhead\@empty\else%
-      \usebeamercolor[fg]{subsection title}%
-      \usebeamerfont{subsection title}%
-      \insertsubsectionhead
-    \fi
-  \end{minipage}
-  \par
-  \vspace{\baselineskip}
+  \nointerlineskip%
+  \vspace*{0.5em}
+
+      \vspace{0.5em}
+%      \vfill}
+  \end{beamercolorbox}%
+    \vspace{-2em}
+  \noindent\textcolor{lancasterGrey}{\rule{6.5em}{0.08em}}
+\vspace{0.425\paperheight}
+  %
+%  \centering
+%  \begin{minipage}{22em}
+%    \raggedright
+%    \usebeamercolor[fg]{section title}
+%    \usebeamerfont{section title}
+%    \insertsectionhead\\[-1ex]
+%    \usebeamertemplate*{progress bar in section page}
+%    \par
+%    \ifx\insertsubsectionhead\@empty\else%
+%      \usebeamercolor[fg]{subsection title}%
+%      \usebeamerfont{subsection title}%
+%      \insertsubsectionhead
+%    \fi
+%  \end{minipage}
+%  \par
+%  \vspace{\baselineskip}
 }
 \newcommand{\lancaster@disablesectionpage}{
   \AtBeginSection{
@@ -237,7 +361,17 @@
 \setbeamertemplate{block end}{\end{beamercolorbox}\vspace*{0.2ex}}
 \setbeamertemplate{block alerted end}{\end{beamercolorbox}\vspace*{0.2ex}}
 \setbeamertemplate{block example end}{\end{beamercolorbox}\vspace*{0.2ex}}
-\setbeamertemplate{itemize items}{\textbullet}
+
+%Specify itemize spacing
+\let\olditem\item
+\renewcommand{\item}{%
+  \olditem\vspace{0.17em}
+}
+
+\setbeamertemplate{itemize items}{\color{lancasterGrey}\textbullet}
+%\setbeamertemplate{itemize items}{\color{lancasterGrey}{\fontsize{15}{15}\selectfont\textbullet}}
+%\setbeamertemplate{itemize subitem}{\color{lancasterGrey}{\fontsize{13}{13}\selectfont\textbullet}}
+%\setbeamertemplate{itemize subsubitem}{\color{lancasterGrey}{\fontsize{11}{11}\selectfont\textbullet}}
 \setbeamertemplate{caption label separator}{: }
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{footnote}{%
@@ -290,7 +424,7 @@
       \usebeamerfont{standout}
     }{}
   }
-\lancaster@inner@setdefaults
+%\lancaster@inner@setdefaults
 \ProcessPgfPackageOptions{/lancaster/inner}
 \endinput
 %%

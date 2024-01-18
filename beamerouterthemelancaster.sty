@@ -52,6 +52,17 @@
       }
     },
 }
+
+\newcommand{\lancaster@outer@logodept}{
+  \def\logoframeindent{12.96}
+  \def\insertLUlogo{img/dept-logo.png}
+}
+
+\newcommand{\lancaster@outer@logouni}{
+  \def\logoframeindent{10.96}
+  \def\insertLUlogo{img/lu-logo.png}
+}
+
 \newcommand{\lancaster@outer@setdefaults}{
   \pgfkeys{/lancaster/outer/.cd,
     numbering=counter,
@@ -68,7 +79,7 @@
 }
 \defbeamertemplate{headline}{plain}{}
 \defbeamertemplate{footline}{plain}{%
-  \begin{beamercolorbox}[wd=\textwidth, sep=3ex]{footline}%
+  \begin{beamercolorbox}[wd=0.98\textwidth, sep=4ex]{footline}%
     \usebeamerfont{page number in head/foot}%
     \usebeamertemplate*{frame footer}
     \hfill%
@@ -76,7 +87,8 @@
   \end{beamercolorbox}%
 }
 \newlength{\lancaster@frametitle@padding}
-\setlength{\lancaster@frametitle@padding}{2.2ex}
+\setlength{\lancaster@frametitle@padding}{0em}
+%\setlength{\lancaster@frametitle@padding}{0.5ex}
 \newcommand{\lancaster@frametitlestrut@start}{
   \rule{0pt}{\lancaster@frametitle@padding +%
     \totalheightof{%
@@ -90,21 +102,53 @@
 \defbeamertemplate{frametitle}{plain}{%
   \nointerlineskip%
   \begin{beamercolorbox}[%
-      wd=\paperwidth,%
+      wd=0.5\paperwidth,%
       sep=0pt,%
       leftskip=\lancaster@frametitle@padding,%
       rightskip=\lancaster@frametitle@padding,%
+      ht=5.1em 
     ]{frametitle}%
-  \lancaster@frametitlestrut@start%
-  \insertframetitle%
+    % \lancaster@frametitlestrut@start%
+    %\vspace{2em}
+    % Using vbox as suggested to ensure that single or double line of text
+    % is centred at same point (vertically aligned)
+    % suggest at
+    % https://tex.stackexchange.com/questions/56300/how-can-i-vertically-align-a-beamercolorbox
+    %
+    \vbox to3em{\vfill
+      \raggedright
+      \usebeamerfont{frametitle}\insertframetitle
+      
+      \usebeamerfont{framesubtitle}\insertframesubtitle
+      \vfill}
   \nolinebreak%
-  \lancaster@frametitlestrut@end%
+    \par
+    \vspace{-1.0em}
+    {\hspace{-0.3em}\noindent\textcolor{lancasterGrey}{\rule{4.2em}{0.06em}}}
+    \vspace{0.1em}
+    %\lancaster@frametitlestrut@end%
+%    \includegraphics[height=2em]{img/logo}
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[inner sep=0pt] (russell) at (\paperwidth-\logoframeindent em, 2.1em)
+           {\includegraphics[height=1.7em]{\insertLUlogo}};
+    \end{tikzpicture}    
+
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{%
   \usebeamerfont{frametitle}
   \romannumeral \insertcontinuationcount
 }
+
+\defbeamertemplate*{background}{lancaster}[1][]{
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw [line width=0.53cm,lancasterLightGrey] (current page.south east) rectangle (current page.north west);
+%    \node[inner sep=0pt] (russell) at (\paperwidth-6.4em, -3.97em)
+%        {\includegraphics[height=2.3em]{img/logoNormal}};
+  \end{tikzpicture}    
+}
+
+
 \newlength{\lancaster@progressinheadfoot}
 \newlength{\lancaster@progressinheadfoot@linewidth}
 \setlength{\lancaster@progressinheadfoot@linewidth}{0.4pt}

@@ -29,6 +29,9 @@
     /lancaster/font,
   }
 }
+
+\AtBeginDocument{\usebeamerfont{normal text}}
+
 \pgfkeys{
   /lancaster/titleformat plain/.cd,
     .is choice,
@@ -71,10 +74,47 @@
   nosectionslide/.code=\pgfkeysalso{inner/sectionpage=none},
   darkcolors/.code=\pgfkeysalso{color/background=dark},
   blockbg/.code=\pgfkeysalso{color/block=fill, inner/block=fill},
+  blue/.code=\pgfkeysalso{titleslide=blue},
+  red/.code=\pgfkeysalso{titleslide=red},
+  white/.code=\pgfkeysalso{titleslide=white},
+  logodept/.code=\pgfkeysalso{logotype=dept},
+  logouni/.code=\pgfkeysalso{logotype=uni},
 }
+
+\pgfkeys{
+  /lancaster/logotype/.cd,
+    .is choice,
+  dept/.code={
+    \lancaster@inner@logodept
+    \lancaster@outer@logodept
+    },
+  uni/.code={
+    \lancaster@inner@logouni
+    \lancaster@outer@logouni
+    },
+}
+
+\pgfkeys{
+  /lancaster/titleslide/.cd,
+    .is choice,
+  white/.code={
+    \lancaster@colors@white
+    },
+  red/.code={
+    \lancaster@colors@red
+  },
+  blue/.code={
+    \lancaster@colors@blue
+    },
+}
+
+
+
 \newcommand{\lancaster@setdefaults}{
   \pgfkeys{/lancaster/.cd,
     titleformat plain=regular,
+    titleslide=white,
+    logotype=uni
   }
 }
 \providecommand{\tikzexternalenable}{}

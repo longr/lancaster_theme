@@ -93,6 +93,10 @@
     You need to compile with XeLaTeX or LuaLaTeX to use the Fira fonts%
   }
 }
+
+\usefonttheme{default}
+\usepackage{helvet}
+
 \setbeamerfont{title}{size=\Large,%
                       series=\bfseries}
 \setbeamerfont{author}{size=\small}
@@ -104,8 +108,8 @@
 \setbeamerfont{block title alerted}{size=\normalsize,%
                                     series=\bfseries}
 \setbeamerfont*{subtitle}{size=\large}
-\setbeamerfont{frametitle}{size=\large,%
-                           series=\bfseries}
+%\setbeamerfont{frametitle}{size=\large,%
+%                           series=\bfseries}
 \setbeamerfont{caption}{size=\small}
 \setbeamerfont{caption name}{series=\bfseries}
 \setbeamerfont{description item}{series=\bfseries}
@@ -120,6 +124,22 @@
                                         series=\normalfont}
 \setbeamerfont{standout}{size=\Large,%
                          series=\bfseries}
+
+\setbeamerfont{frametitle}{size*={15}{18}}
+\setbeamerfont{framesubtitle}{size*={12}{14}}
+\setbeamerfont*{title}{size*={20}{20}}
+\setbeamerfont*{subtitle}{size*={20}{20}}
+\setbeamerfont{author}{size*={12}{12}}
+\setbeamerfont{date}{size*={12}{12}}
+\setbeamerfont{institute}{size*={12}{12}}
+\setbeamerfont{block body}{size*={12}{12}}
+\setbeamerfont{block title}{size*={12}{12},%
+                            series=\bfseries}
+\setbeamerfont{block title alerted}{size=*={12}{12},%
+                           series=\bfseries}
+\setbeamerfont{normal text}{size*={12}{12}}
+
+
 \pgfkeys{
   /lancaster/font/titleformat title/.cd,
     .is choice,
