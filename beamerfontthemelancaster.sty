@@ -1,10 +1,10 @@
 %%
-%% This is file `beamerfontthememetropolis.sty',
+%% This is file `beamerfontthemelancaster.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% beamerfontthememetropolis.dtx  (with options: `package')
+%% beamerfontthemelancaster.dtx  (with options: `package')
 %% ---------------------------------------------------------------------------
 %% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
 %% contributors can be found at
@@ -17,7 +17,7 @@
 %% International License (https://creativecommons.org/licenses/by-sa/4.0/).
 %% ---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerfontthememetropolis}[2017/01/23 Metropolis font theme]
+\ProvidesPackage{beamerfontthemelancaster}[2017/01/23 Lancaster font theme]
 \RequirePackage{etoolbox}
 \RequirePackage{ifxetex}
 \RequirePackage{ifluatex}
@@ -69,7 +69,7 @@
                    BoldItalicFont={Fira Sans Italic OT}]%
                   {Fira Sans Light OT}%
     }{%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Could not find Fira Sans fonts%
       }
     }
@@ -80,7 +80,7 @@
     \iffontsavailable{Fira Mono OT, Fira Mono Bold OT}{%
       \setmonofont[BoldFont={Fira Mono Medium OT}]{Fira Mono OT}%
     }{%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Could not find Fira Mono fonts%
       }
     }
@@ -89,7 +89,7 @@
     \addfontfeature{Numbers={Monospaced}}%
   }
 }{%
-  \PackageWarning{beamerthememetropolis}{%
+  \PackageWarning{beamerthemelancaster}{%
     You need to compile with XeLaTeX or LuaLaTeX to use the Fira fonts%
   }
 }
@@ -121,186 +121,186 @@
 \setbeamerfont{standout}{size=\Large,%
                          series=\bfseries}
 \pgfkeys{
-  /metropolis/font/titleformat title/.cd,
+  /lancaster/font/titleformat title/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@titleformat\@empty%
+      \let\lancaster@titleformat\@empty%
       \setbeamerfont{title}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@titleformat\@empty%
+      \let\lancaster@titleformat\@empty%
       \setbeamerfont{title}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@titleformat\lowercase%
+      \let\lancaster@titleformat\lowercase%
       \setbeamerfont{title}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat title=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@titleformat\uppercase%
+      \let\lancaster@titleformat\uppercase%
       \setbeamerfont{title}{shape=\normalfont}
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat title=allcaps can lead to problems%
       }
     },
 }
 \pgfkeys{
-  /metropolis/font/titleformat subtitle/.cd,
+  /lancaster/font/titleformat subtitle/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@subtitleformat\@empty%
+      \let\lancaster@subtitleformat\@empty%
       \setbeamerfont{subtitle}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@subtitleformat\@empty%
+      \let\lancaster@subtitleformat\@empty%
       \setbeamerfont{subtitle}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@subtitleformat\lowercase%
+      \let\lancaster@subtitleformat\lowercase%
       \setbeamerfont{subtitle}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat subtitle=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@subtitleformat\uppercase%
+      \let\lancaster@subtitleformat\uppercase%
       \setbeamerfont{subtitle}{shape=\normalfont}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat subtitle=allcaps can lead to problems%
       }
     },
 }
 \pgfkeys{
-  /metropolis/font/titleformat section/.cd,
+  /lancaster/font/titleformat section/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@sectiontitleformat\@empty%
+      \let\lancaster@sectiontitleformat\@empty%
       \setbeamerfont{section title}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@sectiontitleformat\@empty%
+      \let\lancaster@sectiontitleformat\@empty%
       \setbeamerfont{section title}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@sectiontitleformat\MakeLowercase%
+      \let\lancaster@sectiontitleformat\MakeLowercase%
       \setbeamerfont{section title}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat section=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@sectiontitleformat\MakeUppercase%
+      \let\lancaster@sectiontitleformat\MakeUppercase%
       \setbeamerfont{section title}{shape=\normalfont}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat section=allcaps can lead to problems%
       }
     },
 }
 \pgfkeys{
-  /metropolis/font/titleformat frame/.cd,
+  /lancaster/font/titleformat frame/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@frametitleformat\@empty%
+      \let\lancaster@frametitleformat\@empty%
       \setbeamerfont{frametitle}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@frametitleformat\@empty%
+      \let\lancaster@frametitleformat\@empty%
       \setbeamerfont{frametitle}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@frametitleformat\MakeLowercase%
+      \let\lancaster@frametitleformat\MakeLowercase%
       \setbeamerfont{frametitle}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat frame=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@frametitleformat\MakeUppercase%
+      \let\lancaster@frametitleformat\MakeUppercase%
       \setbeamerfont{frametitle}{shape=\normalfont}
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemelancaster}{%
         Be aware that titleformat frame=allcaps can lead to problems%
       }
     },
 }
 \pgfkeys{
-  /metropolis/font/.cd,
+  /lancaster/font/.cd,
   titleformattitle/.code=\pgfkeysalso{titleformat title=#1},
   titleformatsubtitle/.code=\pgfkeysalso{titleformat subtitle=#1},
   titleformatsection/.code=\pgfkeysalso{titleformat section=#1},
   titleformatframe/.code=\pgfkeysalso{titleformat frame=#1},
 }
-\newcommand{\metropolis@font@setdefaults}{
-  \pgfkeys{/metropolis/font/.cd,
+\newcommand{\lancaster@font@setdefaults}{
+  \pgfkeys{/lancaster/font/.cd,
     titleformat title=regular,
     titleformat subtitle=regular,
     titleformat section=regular,
     titleformat frame=regular,
   }
 }
-\def\metropolis@titleformat#1{#1}
-\def\metropolis@subtitleformat#1{#1}
-\def\metropolis@sectiontitleformat#1{#1}
-\def\metropolis@frametitleformat#1{#1}
+\def\lancaster@titleformat#1{#1}
+\def\lancaster@subtitleformat#1{#1}
+\def\lancaster@sectiontitleformat#1{#1}
+\def\lancaster@frametitleformat#1{#1}
 \patchcmd{\beamer@title}%
   {\def\inserttitle{#2}}%
-  {\def\inserttitle{\metropolis@titleformat{#2}}}%
+  {\def\inserttitle{\lancaster@titleformat{#2}}}%
   {}%
-  {\PackageError{beamerfontthememetropolis}{Patching title failed}\@ehc}
+  {\PackageError{beamerfontthemelancaster}{Patching title failed}\@ehc}
 \patchcmd{\beamer@subtitle}%
   {\def\insertsubtitle{#2}}%
-  {\def\insertsubtitle{\metropolis@subtitleformat{#2}}}%
+  {\def\insertsubtitle{\lancaster@subtitleformat{#2}}}%
   {}%
-  {\PackageError{beamerfontthememetropolis}{Patching subtitle failed}\@ehc}
+  {\PackageError{beamerfontthemelancaster}{Patching subtitle failed}\@ehc}
 \patchcmd{\sectionentry}
   {\def\insertsectionhead{#2}}
-  {\def\insertsectionhead{\metropolis@sectiontitleformat{#2}}}
+  {\def\insertsectionhead{\lancaster@sectiontitleformat{#2}}}
   {}
-  {\PackageError{beamerfontthememetropolis}{Patching section title failed}\@ehc}
+  {\PackageError{beamerfontthemelancaster}{Patching section title failed}\@ehc}
 \@tempswafalse
 \patchcmd{\beamer@section}
   {\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
   {\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{\unexpanded{#1}}}}}
+    \noexpand\lancaster@sectiontitleformat{\unexpanded{#1}}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@section}
   {\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
   {\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{%
-    \metropolis@sectiontitleformat{#1}}}}
+    \lancaster@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@section}
   {\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
   {\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{#1}}}}
+    \noexpand\lancaster@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \if@tempswa\else
-  \PackageError{beamerfontthememetropolis}{Patching section title failed}\@ehc
+  \PackageError{beamerfontthemelancaster}{Patching section title failed}\@ehc
 \fi
 \@tempswafalse
 \patchcmd{\beamer@subsection}
   {\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
   {\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{\unexpanded{#1}}}}}
+    \noexpand\lancaster@sectiontitleformat{\unexpanded{#1}}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@subsection}
   {\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
   {\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{%
-    \metropolis@sectiontitleformat{#1}}}}
+    \lancaster@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@subsection}
   {\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
   {\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{#1}}}}
+    \noexpand\lancaster@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \if@tempswa\else
-  \PackageError{beamerfontthememetropolis}{Patching section title failed}\@ehc
+  \PackageError{beamerfontthemelancaster}{Patching section title failed}\@ehc
 \fi
 \patchcmd{\beamer@@frametitle}
   {{%
@@ -310,16 +310,16 @@
     \gdef\beamer@shortframetitle{#1}%
     }}
   {{%
-      \gdef\insertframetitle{{\metropolis@frametitleformat{#2}\ifnum%
+      \gdef\insertframetitle{{\lancaster@frametitleformat{#2}\ifnum%
       \beamer@autobreakcount>0\relax{}\space%
       \usebeamertemplate*{frametitle continuation}\fi}}%
     \gdef\beamer@frametitle{#2}%
     \gdef\beamer@shortframetitle{#1}%
     }}
   {}
-  {\PackageError{beamerfontthememetropolis}{Patching frame title failed}\@ehc}
-\metropolis@font@setdefaults
-\ProcessPgfPackageOptions{/metropolis/font}
+  {\PackageError{beamerfontthemelancaster}{Patching frame title failed}\@ehc}
+\lancaster@font@setdefaults
+\ProcessPgfPackageOptions{/lancaster/font}
 \endinput
 %%
-%% End of file `beamerfontthememetropolis.sty'.
+%% End of file `beamerfontthemelancaster.sty'.

@@ -1,10 +1,10 @@
 %%
-%% This is file `beamerouterthememetropolis.sty',
+%% This is file `beamerouterthemelancaster.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% beamerouterthememetropolis.dtx  (with options: `package')
+%% beamerouterthemelancaster.dtx  (with options: `package')
 %% ---------------------------------------------------------------------------
 %% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
 %% contributors can be found at
@@ -17,43 +17,43 @@
 %% International License (https://creativecommons.org/licenses/by-sa/4.0/).
 %% ---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerouterthememetropolis}[2017/01/23 Metropolis outer theme]
+\ProvidesPackage{beamerouterthemelancaster}[2017/01/23 Lancaster outer theme]
 \RequirePackage{etoolbox}
 \RequirePackage{calc}
 \RequirePackage{pgfopts}
 \pgfkeys{
-  /metropolis/outer/numbering/.cd,
+  /lancaster/outer/numbering/.cd,
     .is choice,
     none/.code=\setbeamertemplate{frame numbering}[none],
     counter/.code=\setbeamertemplate{frame numbering}[counter],
     fraction/.code=\setbeamertemplate{frame numbering}[fraction],
 }
 \pgfkeys{
-  /metropolis/outer/progressbar/.cd,
+  /lancaster/outer/progressbar/.cd,
     .is choice,
     none/.code={%
       \setbeamertemplate{headline}[plain]
       \setbeamertemplate{frametitle}[plain]
       \setbeamertemplate{footline}[plain]
     },
-    head/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    head/.code={\pgfkeys{/lancaster/outer/progressbar=none}
       \addtobeamertemplate{headline}{}{%
         \usebeamertemplate*{progress bar in head/foot}
       }
     },
-    frametitle/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    frametitle/.code={\pgfkeys{/lancaster/outer/progressbar=none}
       \addtobeamertemplate{frametitle}{}{%
         \usebeamertemplate*{progress bar in head/foot}
       }
     },
-    foot/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    foot/.code={\pgfkeys{/lancaster/outer/progressbar=none}
       \addtobeamertemplate{footline}{}{%
         \usebeamertemplate*{progress bar in head/foot}%
       }
     },
 }
-\newcommand{\metropolis@outer@setdefaults}{
-  \pgfkeys{/metropolis/outer/.cd,
+\newcommand{\lancaster@outer@setdefaults}{
+  \pgfkeys{/lancaster/outer/.cd,
     numbering=counter,
     progressbar=none,
   }
@@ -75,49 +75,49 @@
     \usebeamertemplate*{frame numbering}
   \end{beamercolorbox}%
 }
-\newlength{\metropolis@frametitle@padding}
-\setlength{\metropolis@frametitle@padding}{2.2ex}
-\newcommand{\metropolis@frametitlestrut@start}{
-  \rule{0pt}{\metropolis@frametitle@padding +%
+\newlength{\lancaster@frametitle@padding}
+\setlength{\lancaster@frametitle@padding}{2.2ex}
+\newcommand{\lancaster@frametitlestrut@start}{
+  \rule{0pt}{\lancaster@frametitle@padding +%
     \totalheightof{%
-      \ifcsdef{metropolis@frametitleformat}{\metropolis@frametitleformat X}{X}%
+      \ifcsdef{lancaster@frametitleformat}{\lancaster@frametitleformat X}{X}%
     }%
   }%
 }
-\newcommand{\metropolis@frametitlestrut@end}{
-  \rule[-\metropolis@frametitle@padding]{0pt}{\metropolis@frametitle@padding}
+\newcommand{\lancaster@frametitlestrut@end}{
+  \rule[-\lancaster@frametitle@padding]{0pt}{\lancaster@frametitle@padding}
 }
 \defbeamertemplate{frametitle}{plain}{%
   \nointerlineskip%
   \begin{beamercolorbox}[%
       wd=\paperwidth,%
       sep=0pt,%
-      leftskip=\metropolis@frametitle@padding,%
-      rightskip=\metropolis@frametitle@padding,%
+      leftskip=\lancaster@frametitle@padding,%
+      rightskip=\lancaster@frametitle@padding,%
     ]{frametitle}%
-  \metropolis@frametitlestrut@start%
+  \lancaster@frametitlestrut@start%
   \insertframetitle%
   \nolinebreak%
-  \metropolis@frametitlestrut@end%
+  \lancaster@frametitlestrut@end%
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{%
   \usebeamerfont{frametitle}
   \romannumeral \insertcontinuationcount
 }
-\newlength{\metropolis@progressinheadfoot}
-\newlength{\metropolis@progressinheadfoot@linewidth}
-\setlength{\metropolis@progressinheadfoot@linewidth}{0.4pt}
+\newlength{\lancaster@progressinheadfoot}
+\newlength{\lancaster@progressinheadfoot@linewidth}
+\setlength{\lancaster@progressinheadfoot@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in head/foot}{
   \nointerlineskip
-  \setlength{\metropolis@progressinheadfoot}{%
+  \setlength{\lancaster@progressinheadfoot}{%
     \paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
   }%
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
     \tikzexternaldisable%
     \begin{tikzpicture}
-      \fill[bg] (0,0) rectangle (\paperwidth, \metropolis@progressinheadfoot@linewidth);
-      \fill[fg] (0,0) rectangle (\metropolis@progressinheadfoot, \metropolis@progressinheadfoot@linewidth);
+      \fill[bg] (0,0) rectangle (\paperwidth, \lancaster@progressinheadfoot@linewidth);
+      \fill[fg] (0,0) rectangle (\lancaster@progressinheadfoot, \lancaster@progressinheadfoot@linewidth);
     \end{tikzpicture}%
     \tikzexternalenable%
   \end{beamercolorbox}
@@ -125,13 +125,13 @@
 \AtBeginDocument{%
   \apptocmd{\appendix}{%
     \pgfkeys{%
-      /metropolis/outer/.cd,
+      /lancaster/outer/.cd,
       numbering=none,
       progressbar=none}
     }{}{}
 }
-\metropolis@outer@setdefaults
-\ProcessPgfPackageOptions{/metropolis/outer}
+\lancaster@outer@setdefaults
+\ProcessPgfPackageOptions{/lancaster/outer}
 \endinput
 %%
-%% End of file `beamerouterthememetropolis.sty'.
+%% End of file `beamerouterthemelancaster.sty'.

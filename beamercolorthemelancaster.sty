@@ -1,10 +1,10 @@
 %%
-%% This is file `beamercolorthememetropolis.sty',
+%% This is file `beamercolorthemelancaster.sty',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% beamercolorthememetropolis.dtx  (with options: `package')
+%% beamercolorthemelancaster.dtx  (with options: `package')
 %% ---------------------------------------------------------------------------
 %% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
 %% contributors can be found at
@@ -17,22 +17,22 @@
 %% International License (https://creativecommons.org/licenses/by-sa/4.0/).
 %% ---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamercolorthememetropolis}[2017/01/23 Metropolis color theme]
+\ProvidesPackage{beamercolorthemelancaster}[2017/01/23 Lancaster color theme]
 \RequirePackage{pgfopts}
 \pgfkeys{
-  /metropolis/color/block/.cd,
+  /lancaster/color/block/.cd,
     .is choice,
-    transparent/.code=\metropolis@block@transparent,
-    fill/.code=\metropolis@block@fill,
+    transparent/.code=\lancaster@block@transparent,
+    fill/.code=\lancaster@block@fill,
 }
 \pgfkeys{
-  /metropolis/color/background/.cd,
+  /lancaster/color/background/.cd,
     .is choice,
-    dark/.code=\metropolis@colors@dark,
-    light/.code=\metropolis@colors@light,
+    dark/.code=\lancaster@colors@dark,
+    light/.code=\lancaster@colors@light,
 }
-\newcommand{\metropolis@color@setdefaults}{
-  \pgfkeys{/metropolis/color/.cd,
+\newcommand{\lancaster@color@setdefaults}{
+  \pgfkeys{/lancaster/color/.cd,
     background=light,
     block=transparent,
   }
@@ -41,14 +41,14 @@
 \definecolor{mDarkTeal}{HTML}{23373b}
 \definecolor{mLightBrown}{HTML}{EB811B}
 \definecolor{mLightGreen}{HTML}{14B03D}
-\newcommand{\metropolis@colors@dark}{
+\newcommand{\lancaster@colors@dark}{
   \setbeamercolor{normal text}{%
     fg=black!2,
     bg=mDarkTeal
   }
   \usebeamercolor[fg]{normal text}
 }
-\newcommand{\metropolis@colors@light}{
+\newcommand{\lancaster@colors@light}{
   \setbeamercolor{normal text}{%
     fg=mDarkTeal,
     bg=black!2
@@ -91,7 +91,7 @@
   use=progress bar,
   parent=progress bar
 }
-\newcommand{\metropolis@block@transparent}{
+\newcommand{\lancaster@block@transparent}{
   \setbeamercolor{block title}{%
     use=normal text,
     fg=normal text.fg,
@@ -101,7 +101,7 @@
     bg=
   }
 }
-\newcommand{\metropolis@block@fill}{
+\newcommand{\lancaster@block@fill}{
   \setbeamercolor{block title}{%
     use=normal text,
     fg=normal text.fg,
@@ -130,9 +130,9 @@
 \setbeamercolor{bibliography entry title}{fg=, bg=}
 \setbeamercolor{bibliography entry location}{fg=, bg=}
 \setbeamercolor{bibliography entry note}{fg=, bg=}
-\metropolis@color@setdefaults
-\ProcessPgfPackageOptions{/metropolis/color}
+\lancaster@color@setdefaults
+\ProcessPgfPackageOptions{/lancaster/color}
 \mode<all>
 \endinput
 %%
-%% End of file `beamercolorthememetropolis.sty'.
+%% End of file `beamercolorthemelancaster.sty'.
