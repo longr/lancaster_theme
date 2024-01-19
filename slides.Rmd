@@ -1,0 +1,67 @@
+---
+title: An example presentation
+author: Robin Long
+date: 10/01/24
+output:
+  beamer_presentation:
+    keep_tex: true
+classoption: "aspectratio=169"
+header-includes:
+  - \usetheme[logouni,usetotalslideindicator]{lancaster}
+# usetheme options:
+# usetotalslideindicator # needed for slide number to show as x/total
+# red/blue/white - for red/blue/white title slide
+# logodept/logouni - adjusts the spacing for the wider departmental logos
+---
+
+## Example slide
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+- Bullet 4
+- Bullet 5
+
+
+## Multiple columns with a very long title
+
+::: columns
+
+:::: column
+![An example of how to use graphics in the presentation](img/lu-logo.png){ height=50% }
+::::
+
+:::: column
+- Bullets
+  1. With sub bullet points
+  2. with sub bullet points
+  1. with sub bullet points
+  3. with sub bullet points
+::::
+
+:::
+
+## Coding example - Python
+
+```python
+def hello():
+print("Hello World!")
+hello()
+```
+
+# Chapter slide
+
+## New slide
+
+This slide was intentionally left blank
+
+## Code block
+
+When you subset a data frame, it does not necessarily return
+a data frame. For example, if you subset two columns, you get
+a data frame, but when you try to subset one column, you get
+a vector:
+
+```{r class.source="bg-danger", class.output="bg-warning"}
+mtcars[1:5, "mpg"]
+```

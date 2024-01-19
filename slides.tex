@@ -1,0 +1,66 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme[
+  logouni, % logodept to use a department logo, logouni to university logo
+  usetotalslideindicator % slide numbers shown as n/total
+]{lancaster} % Use metropolis theme
+\usepackage{listings}
+
+
+\beamertemplatenavigationsymbolsempty
+
+\title{An example presentation}
+\author{Robin Long}
+\date{10/01/24}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Example slide}
+\begin{itemize}
+\item Bullet 1
+\item Bullet 2
+\item Bullet 3
+\item Bullet 4
+\item Bullet 5
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Multiple columns with a very long title}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{img/lu-logo.png}
+\caption{An example of how to use graphics in the presentation}
+\end{figure}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\begin{itemize}
+\item Bullets
+  \begin{enumerate}
+  \item With sub bullet points
+  \item with sub bullet points
+  \item with sub bullet points
+  \item with sub bullet points
+  \end{enumerate}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Coding example - Python}
+```python
+def hello():
+print("Hello World!")
+hello()
+```
+\end{frame}
+
+\section{Chapter slide}\label{chapter-slide}
+
+\begin{frame}{New slide}
+This slide was intentionally left blank
+\end{frame}
+
+\end{document}
