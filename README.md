@@ -4,6 +4,7 @@
 * Follows university branding / guidelines.
 * Make file and examples for LaTeX, Markdown, RMarkdown files.
 
+![example](img/example.png)
 
 ## Usage
 
