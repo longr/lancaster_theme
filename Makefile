@@ -4,7 +4,7 @@ default: html ;
 
 html:
 	pandoc -t revealjs --slide-level=2 -s -o $(FILES).html $(FILES).md \
-	-V revealjs-url=https://unpkg.com/reveal.js@3.9.2 \
+	-V revealjs-url=https://unpkg.com/reveal.js \
 	-V theme=white \
 	-V slideNumber=true \
 	-V progress=true
